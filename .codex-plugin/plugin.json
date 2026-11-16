@@ -1,0 +1,45 @@
+{
+  "name": "agent-collab-kit",
+  "version": "1.0.0",
+  "description": "Planner/executor collaboration for two coding agents: file-based planning (skill + MCP), collaboration rules, and the bundled Codex-Claude desktop bridge.",
+  "license": "MIT",
+  "keywords": ["planning", "collaboration", "codex", "claude", "bridge", "mcp"],
+  "skills": "./skills/",
+  "mcpServers": {
+    "planning": {
+      "command": "python",
+      "cwd": "./",
+      "args": [
+        "./mcp/planning_mcp.py"
+      ]
+    },
+    "codex-claude-desktop-bridge": {
+      "command": "node",
+      "cwd": "./vendor/codex-claude-desktop-bridge",
+      "args": [
+        "./scripts/mcp.mjs"
+      ],
+      "env_vars": [
+        "CODEX_APP_TOOLS_PIPE_PATH",
+        "CODEX_THREAD_ID",
+        "CODEX_HOME",
+        "USERPROFILE",
+        "HOME",
+        "PATH",
+        "CLAUDE_CONFIG_DIR",
+        "CODEX_CLAUDE_BRIDGE_STATE_DIR",
+        "CODEX_CLAUDE_BRIDGE_REGISTRY_DIR",
+        "CODEX_CLAUDE_BRIDGE_CODEX_BIN",
+        "CODEX_CLAUDE_BRIDGE_DAEMON",
+        "CODEX_CLAUDE_BRIDGE_SSH_HOST"
+      ]
+    }
+  },
+  "interface": {
+    "displayName": "Agent Collab Kit",
+    "shortDescription": "File planning plus planner/executor collaboration over the Codex-Claude bridge.",
+    "developerName": "local",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"]
+  }
+}

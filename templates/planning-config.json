@@ -1,0 +1,11 @@
+{
+  "schema_version": 4,
+  "mode": "project",
+  "docs_root": "docs/project",
+  "stop_policy": "advisory",
+  "repo_state": "auto",
+  "lint_since": "",
+  "lint_limits": {},
+  "handoff_readmes": ["docs/design/codex/README.md"],
+  "policy_path": "tools/codex/project-policy.json"
+}

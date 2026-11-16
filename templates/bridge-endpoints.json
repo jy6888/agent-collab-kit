@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "note": "本机 bridge 通信端点登记（git 忽略）。谁开了新对话谁更新自己那一项，并向对方发 HELLO。",
+  "planner": {
+    "session_id": "",
+    "name": "",
+    "since": ""
+  },
+  "executors": {}
+}

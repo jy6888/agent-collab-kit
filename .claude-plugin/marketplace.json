@@ -1,0 +1,13 @@
+{
+  "name": "agent-collab-kit-local",
+  "owner": {
+    "name": "local"
+  },
+  "plugins": [
+    {
+      "name": "agent-collab-kit",
+      "source": "./",
+      "description": "File-based planning, planner/executor collaboration rules and the bundled Codex-Claude desktop bridge."
+    }
+  ]
+}

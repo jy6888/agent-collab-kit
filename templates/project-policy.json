@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "scope": "<项目绝对路径，正斜杠>",
+  "enforce_executor_role": true,
+  "planner_owned_paths": [
+    "AGENTS.md",
+    "CLAUDE.md",
+    "README.md",
+    "docs/design/**",
+    "docs/project/PROJECT.md",
+    "docs/project/ROADMAP.md",
+    "docs/project/DECISIONS.md",
+    "docs/project/FINDINGS.md",
+    "docs/project/STATUS.md",
+    "docs/project/HISTORY.md",
+    "docs/project/archive/**",
+    "docs/project/snapshots/**"
+  ],
+  "executor_owned_paths": [
+    ".gitignore",
+    ".codex/hooks.json",
+    "tools/codex/**",
+    "src/**",
+    "scripts/**",
+    "tests/**",
+    "docs/reports/**"
+  ],
+  "experiment_completion_terms": []
+}

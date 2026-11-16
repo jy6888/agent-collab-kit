@@ -1,0 +1,27 @@
+{
+  "name": "codex-claude-desktop-bridge",
+  "version": "0.4.2+codex.20261112130959938",
+  "author": "KeeVeeG",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeeVeeG/codex-claude-desktop-bridge.git"
+  },
+  "homepage": "https://github.com/KeeVeeG/codex-claude-desktop-bridge#readme",
+  "bugs": {
+    "url": "https://github.com/KeeVeeG/codex-claude-desktop-bridge/issues"
+  },
+  "private": true,
+  "type": "module",
+  "description": "Asynchronous Codex and Claude Code messaging on Windows and through a configured SSH host on macOS",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node scripts/test.mjs",
+    "mcp": "node scripts/mcp.mjs",
+    "package": "node scripts/package.mjs",
+    "manifests:check": "node scripts/manifests.mjs --check",
+    "manifests:sync": "node scripts/manifests.mjs --sync"
+  }
+}

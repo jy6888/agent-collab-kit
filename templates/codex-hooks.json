@@ -1,0 +1,68 @@
+{
+  "description": "Project planning and executor-role hooks. Replace <kit> with the absolute path of agent-collab-kit (double the backslashes).",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact|fork",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$env:PLANNING_HOOK_SCOPE='project'; python -s '<kit>\\skills\\planning-with-files-zh\\scripts\\planning_state.py' hook session_start",
+            "timeout": 10,
+            "statusMessage": "Loading project execution policy"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$env:PLANNING_HOOK_SCOPE='project'; python -s '<kit>\\skills\\planning-with-files-zh\\scripts\\planning_state.py' hook user_prompt_submit",
+            "timeout": 10,
+            "statusMessage": "Refreshing project execution policy"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|apply_patch|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$env:PLANNING_HOOK_SCOPE='project'; python -s '<kit>\\skills\\planning-with-files-zh\\scripts\\planning_state.py' hook pre_tool",
+            "timeout": 10,
+            "statusMessage": "Enforcing project write ownership"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash|apply_patch|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$env:PLANNING_HOOK_SCOPE='project'; python -s '<kit>\\skills\\planning-with-files-zh\\scripts\\planning_state.py' hook post_tool",
+            "timeout": 15,
+            "statusMessage": "Syncing project task state"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$env:PLANNING_HOOK_SCOPE='project'; python -s '<kit>\\skills\\planning-with-files-zh\\scripts\\planning_state.py' hook stop",
+            "timeout": 15,
+            "statusMessage": "Checking commit and planning policy"
+          }
+        ]
+      }
+    ]
+  }
+}

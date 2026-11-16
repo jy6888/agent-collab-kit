@@ -1,0 +1,4 @@
+interface:
+  display_name: "Planning with Files"
+  short_description: "Keep long project plans and task progress in files"
+  default_prompt: "Use $planning-with-files-zh to manage this long coding task and preserve project context."

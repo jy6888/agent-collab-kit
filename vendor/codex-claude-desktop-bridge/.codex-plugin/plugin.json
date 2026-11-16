@@ -1,0 +1,68 @@
+{
+  "name": "codex-claude-desktop-bridge",
+  "version": "0.4.2+codex.20261112130959938",
+  "description": "Message Codex (Desktop or terminal) and Claude Code (CLI or Desktop Code sessions) on Windows, with a configured SSH route on macOS.",
+  "author": {
+    "name": "KeeVeeG",
+    "url": "https://github.com/KeeVeeG"
+  },
+  "homepage": "https://github.com/KeeVeeG/codex-claude-desktop-bridge",
+  "repository": "https://github.com/KeeVeeG/codex-claude-desktop-bridge",
+  "license": "MIT",
+  "keywords": [
+    "desktop",
+    "terminal",
+    "messaging",
+    "windows",
+    "macos",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": {
+    "codex-claude-desktop-bridge": {
+      "command": "node",
+      "cwd": "./",
+      "args": [
+        "./scripts/mcp.mjs"
+      ],
+      "env_vars": [
+        "CODEX_APP_TOOLS_PIPE_PATH",
+        "CODEX_THREAD_ID",
+        "CODEX_HOME",
+        "USERPROFILE",
+        "HOME",
+        "PATH",
+        "CLAUDE_CONFIG_DIR",
+        "CODEX_CLAUDE_BRIDGE_STATE_DIR",
+        "CODEX_CLAUDE_BRIDGE_REGISTRY_DIR",
+        "CODEX_CLAUDE_BRIDGE_CODEX_BIN",
+        "CODEX_CLAUDE_BRIDGE_DAEMON",
+        "CODEX_CLAUDE_BRIDGE_SSH_HOST"
+      ]
+    }
+  },
+  "interface": {
+    "displayName": "Codex–Claude Desktop Bridge",
+    "shortDescription": "Message Codex and Claude Code, in Desktop or a terminal.",
+    "longDescription": "Find conversations and send text between Codex (Desktop tasks or terminal sessions) and Claude Code (CLI or Desktop Code sessions). Windows uses native local transports. macOS supports Claude Unix inboxes and a configured Codex SSH host. Either side can start a conversation or reply.",
+    "developerName": "KeeVeeG",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/KeeVeeG/codex-claude-desktop-bridge",
+    "supportURL": "https://github.com/KeeVeeG/codex-claude-desktop-bridge/issues",
+    "privacyPolicyURL": "https://github.com/KeeVeeG/codex-claude-desktop-bridge/blob/main/docs/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/KeeVeeG/codex-claude-desktop-bridge/blob/main/docs/TERMS.md",
+    "composerIcon": "./assets/bridge.svg",
+    "composerIconDark": "./assets/bridge-dark.svg",
+    "logo": "./assets/bridge.svg",
+    "logoDark": "./assets/bridge-dark.svg",
+    "defaultPrompt": [
+      "Open the Claude conversation panel beside this Codex chat so I can search chats, read history, and send a message manually.",
+      "Find the Claude Code session I name, in Desktop or a terminal, and send it my message.",
+      "Check the bridge status and recent outgoing deliveries."
+    ]
+  }
+}

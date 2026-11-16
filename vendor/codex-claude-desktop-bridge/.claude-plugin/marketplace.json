@@ -1,0 +1,13 @@
+{
+  "name": "codex-claude-desktop-local",
+  "owner": {
+    "name": "KeeVeeG"
+  },
+  "plugins": [
+    {
+      "name": "codex-claude-desktop-bridge",
+      "source": "./",
+      "description": "Asynchronous native messages between Codex and Claude Code, in Desktop or a terminal."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "agent-collab-kit",
+  "version": "1.0.0",
+  "description": "Planner/executor collaboration for two coding agents: file-based planning (skill + MCP), collaboration rules, and the bundled Codex-Claude desktop bridge.",
+  "license": "MIT",
+  "keywords": ["planning", "collaboration", "codex", "claude", "bridge", "mcp"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}
